@@ -1,6 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail, MapPin, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/components/ContactForm";
+import MobileNav from "@/components/MobileNav";
 import { useEffect, useState } from "react";
 
 const projects = [
@@ -138,13 +139,13 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#0a0e27]/80 backdrop-blur-md border-b border-[#ff006e]/20">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold tracking-wider">
+          <div className="text-xl md:text-2xl font-bold tracking-wider">
             <span className="text-[#ff006e]">&lt;</span>
             <span className="text-[#e0e7ff]">Mohamed</span>
             <span className="text-[#8338ec]">/</span>
             <span className="text-[#ff006e]">&gt;</span>
           </div>
-          <div className="flex gap-6 items-center">
+          <div className="hidden md:flex gap-6 items-center">
             <a
               href="#projects"
               className="text-[#a8b5d1] hover:text-[#ff006e] transition-colors duration-300"
@@ -158,40 +159,41 @@ export default function Home() {
               Contact
             </a>
           </div>
+          <MobileNav />
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative z-10">
+      <section className="pt-24 md:pt-32 pb-16 md:pb-20 px-4 relative z-10">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
-              <div className="space-y-4 float-up">
-                <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-sm">
+            <div className="space-y-6 md:space-y-8">
+              <div className="space-y-3 md:space-y-4 float-up">
+                <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-xs md:text-sm">
                   &gt; WELCOME TO MY PORTFOLIO
                 </p>
-                <h1 className="text-5xl lg:text-6xl font-bold text-[#e0e7ff] leading-tight neon-text">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#e0e7ff] leading-tight neon-text">
                   Data Analyst & Power BI Expert
                 </h1>
-                <p className="text-xl text-[#a8b5d1] leading-relaxed font-light">
+                <p className="text-base md:text-xl text-[#a8b5d1] leading-relaxed font-light">
                   Transforming complex datasets into compelling visual narratives.
                   I specialize in creating interactive dashboards and data models
                   that drive informed decision-making.
                 </p>
               </div>
 
-              <div className="flex gap-4 pt-4">
-                <a href="#projects">
-                  <Button className="bg-[#ff006e] hover:bg-[#ff1a7f] text-white font-semibold px-8 py-6 text-lg rounded-lg flex items-center gap-2 glow-pulse">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
+                <a href="#projects" className="w-full sm:w-auto">
+                  <Button className="w-full bg-[#ff006e] hover:bg-[#ff1a7f] text-white font-semibold px-6 md:px-8 py-3 md:py-6 text-sm md:text-lg rounded-lg flex items-center justify-center gap-2 glow-pulse">
                     Explore Projects
-                    <ArrowRight size={20} />
+                    <ArrowRight size={18} className="hidden sm:block" />
                   </Button>
                 </a>
-                <a href="#contact">
+                <a href="#contact" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
-                    className="border-[#8338ec] text-[#8338ec] hover:bg-[#8338ec]/10 px-8 py-6 text-lg rounded-lg"
+                    className="w-full border-[#8338ec] text-[#8338ec] hover:bg-[#8338ec]/10 px-6 md:px-8 py-3 md:py-6 text-sm md:text-lg rounded-lg"
                   >
                     Get in Touch
                   </Button>
@@ -199,34 +201,34 @@ export default function Home() {
               </div>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-8">
-                <div className="space-y-2 border-l-2 border-[#ff006e] pl-4">
-                  <p className="text-3xl font-bold text-[#ff006e]">12</p>
-                  <p className="text-[#a8b5d1] text-sm font-mono">PROJECTS</p>
+              <div className="grid grid-cols-3 gap-3 md:gap-6 pt-6 md:pt-8">
+                <div className="space-y-1 md:space-y-2 border-l-2 border-[#ff006e] pl-3 md:pl-4">
+                  <p className="text-2xl md:text-3xl font-bold text-[#ff006e]">12</p>
+                  <p className="text-[#a8b5d1] text-xs md:text-sm font-mono">PROJECTS</p>
                 </div>
-                <div className="space-y-2 border-l-2 border-[#8338ec] pl-4">
-                  <p className="text-3xl font-bold text-[#8338ec]">3+</p>
-                  <p className="text-[#a8b5d1] text-sm font-mono">YRS EXP</p>
+                <div className="space-y-1 md:space-y-2 border-l-2 border-[#8338ec] pl-3 md:pl-4">
+                  <p className="text-2xl md:text-3xl font-bold text-[#8338ec]">3+</p>
+                  <p className="text-[#a8b5d1] text-xs md:text-sm font-mono">YRS EXP</p>
                 </div>
-                <div className="space-y-2 border-l-2 border-[#06ffa5] pl-4">
-                  <p className="text-3xl font-bold text-[#06ffa5]">100%</p>
-                  <p className="text-[#a8b5d1] text-sm font-mono">DEDICATED</p>
+                <div className="space-y-1 md:space-y-2 border-l-2 border-[#06ffa5] pl-3 md:pl-4">
+                  <p className="text-2xl md:text-3xl font-bold text-[#06ffa5]">100%</p>
+                  <p className="text-[#a8b5d1] text-xs md:text-sm font-mono">DEDICATED</p>
                 </div>
               </div>
             </div>
 
             {/* Right Visual */}
             <div className="hidden lg:flex justify-center">
-              <div className="relative w-80 h-80">
+              <div className="relative w-64 md:w-80 h-64 md:h-80">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#ff006e]/20 to-[#8338ec]/20 rounded-2xl blur-3xl glow-pulse"></div>
                 <div className="relative w-full h-full bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] rounded-2xl border-2 border-[#ff006e]/50 flex items-center justify-center overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#ff006e]/10 to-[#8338ec]/10 animate-pulse"></div>
                   <div className="relative text-center space-y-4 z-10">
-                    <div className="text-6xl">📊</div>
-                    <p className="text-[#ff006e] font-mono font-semibold tracking-wider">
+                    <div className="text-5xl md:text-6xl">📊</div>
+                    <p className="text-[#ff006e] font-mono font-semibold tracking-wider text-sm md:text-base">
                       POWER BI
                     </p>
-                    <p className="text-[#a8b5d1] text-sm font-mono">EXPERT</p>
+                    <p className="text-[#a8b5d1] text-xs md:text-sm font-mono">EXPERT</p>
                   </div>
                 </div>
               </div>
@@ -236,45 +238,45 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 relative z-10">
+      <section id="projects" className="py-16 md:py-20 px-4 relative z-10">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-sm mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4">
               &gt; PORTFOLIO
             </p>
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#e0e7ff] mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#e0e7ff] mb-3 md:mb-4">
               Featured Projects
             </h2>
-            <p className="text-[#a8b5d1] text-lg max-w-2xl mx-auto font-light">
+            <p className="text-[#a8b5d1] text-sm md:text-lg max-w-2xl mx-auto font-light">
               A curated selection of my Power BI dashboards and data analysis
               projects across diverse industries
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {projects.map((project, index) => (
               <a
                 key={index}
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className="group active:scale-95 transition-transform"
               >
-                <div className="h-full bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] border border-[#ff006e]/30 rounded-xl p-6 hover:border-[#ff006e] transition-all duration-300 hover:shadow-lg hover:shadow-[#ff006e]/20 hover:-translate-y-2 group-hover:glow-pulse">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="text-4xl">{project.icon}</div>
+                <div className="h-full bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] border border-[#ff006e]/30 rounded-xl p-4 md:p-6 hover:border-[#ff006e] transition-all duration-300 hover:shadow-lg hover:shadow-[#ff006e]/20 hover:-translate-y-2 group-hover:glow-pulse">
+                  <div className="flex items-start justify-between mb-3 md:mb-4">
+                    <div className="text-3xl md:text-4xl">{project.icon}</div>
                     <Zap
-                      size={20}
+                      size={18}
                       className="text-[#a8b5d1] group-hover:text-[#ff006e] transition-colors"
                     />
                   </div>
                   <p className="text-[#06ffa5] text-xs font-mono font-semibold uppercase tracking-wider mb-2">
                     {project.category}
                   </p>
-                  <h3 className="text-xl font-bold text-[#e0e7ff] mb-2 group-hover:text-[#ff006e] transition-colors">
+                  <h3 className="text-base md:text-xl font-bold text-[#e0e7ff] mb-2 group-hover:text-[#ff006e] transition-colors">
                     {project.name}
                   </h3>
-                  <p className="text-[#a8b5d1] text-sm leading-relaxed font-light">
+                  <p className="text-[#a8b5d1] text-xs md:text-sm leading-relaxed font-light">
                     {project.description}
                   </p>
                 </div>
@@ -285,18 +287,18 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-4 relative z-10">
+      <section className="py-16 md:py-20 px-4 relative z-10">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-sm mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4">
               &gt; EXPERTISE
             </p>
-            <h2 className="text-4xl font-bold text-[#e0e7ff]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#e0e7ff]">
               Core Competencies
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {[
               {
                 title: "Power BI",
@@ -322,17 +324,17 @@ export default function Home() {
             ].map((skill, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[#1a1f3a]/50 to-[#0a0e27]/50 border border-[#2d3748] rounded-xl p-8 hover:border-[#ff006e]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#ff006e]/10"
+                className="bg-gradient-to-br from-[#1a1f3a]/50 to-[#0a0e27]/50 border border-[#2d3748] rounded-xl p-4 md:p-8 hover:border-[#ff006e]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#ff006e]/10"
                 style={{
                   borderLeftColor: skill.color,
                   borderLeftWidth: "4px",
                 }}
               >
-                <div className="text-4xl mb-4">{skill.icon}</div>
-                <h3 className="text-xl font-bold text-[#e0e7ff] mb-3">
+                <div className="text-3xl md:text-4xl mb-3 md:mb-4">{skill.icon}</div>
+                <h3 className="text-lg md:text-xl font-bold text-[#e0e7ff] mb-2 md:mb-3">
                   {skill.title}
                 </h3>
-                <p className="text-[#a8b5d1] font-light">{skill.description}</p>
+                <p className="text-[#a8b5d1] font-light text-sm md:text-base">{skill.description}</p>
               </div>
             ))}
           </div>
@@ -340,48 +342,48 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 relative z-10">
+      <section id="contact" className="py-16 md:py-20 px-4 relative z-10">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-sm mb-4">
+            <div className="text-center mb-8 md:mb-12">
+              <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4">
                 &gt; GET IN TOUCH
               </p>
-              <h2 className="text-4xl font-bold text-[#e0e7ff] mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#e0e7ff] mb-4 md:mb-6">
                 Let's Work Together
               </h2>
-              <p className="text-[#a8b5d1] text-lg mb-12 font-light">
+              <p className="text-[#a8b5d1] text-sm md:text-lg mb-8 md:mb-12 font-light">
                 I'm always interested in hearing about new projects and
                 opportunities. Feel free to reach out!
               </p>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-gradient-to-br from-[#1a1f3a]/50 to-[#0a0e27]/50 border border-[#ff006e]/30 rounded-xl p-8 mb-12">
+            <div className="bg-gradient-to-br from-[#1a1f3a]/50 to-[#0a0e27]/50 border border-[#ff006e]/30 rounded-xl p-4 md:p-8 mb-8 md:mb-12">
               <ContactForm />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
               <a
                 href="https://www.linkedin.com/in/mohamed-allam-862747a6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className="group active:scale-95 transition-transform"
               >
-                <div className="bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] border border-[#2d3748] rounded-lg p-6 hover:border-[#8338ec]/50 transition-all hover:shadow-lg hover:shadow-[#8338ec]/20">
-                  <Linkedin className="w-8 h-8 text-[#8338ec] mx-auto mb-3" />
-                  <p className="text-[#e0e7ff] font-semibold">LinkedIn</p>
-                  <p className="text-[#a8b5d1] text-sm mt-1 font-light">
+                <div className="bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] border border-[#2d3748] rounded-lg p-4 md:p-6 hover:border-[#8338ec]/50 transition-all hover:shadow-lg hover:shadow-[#8338ec]/20">
+                  <Linkedin className="w-6 md:w-8 h-6 md:h-8 text-[#8338ec] mx-auto mb-2 md:mb-3" />
+                  <p className="text-[#e0e7ff] font-semibold text-sm md:text-base">LinkedIn</p>
+                  <p className="text-[#a8b5d1] text-xs md:text-sm mt-1 font-light">
                     Connect with me
                   </p>
                 </div>
               </a>
 
-              <a href="mailto:mmagdy180@gmail.com" className="group">
-                <div className="bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] border border-[#2d3748] rounded-lg p-6 hover:border-[#ff006e]/50 transition-all hover:shadow-lg hover:shadow-[#ff006e]/20">
-                  <Mail className="w-8 h-8 text-[#ff006e] mx-auto mb-3" />
-                  <p className="text-[#e0e7ff] font-semibold">Email</p>
-                  <p className="text-[#a8b5d1] text-sm mt-1 font-light">
+              <a href="mailto:mmagdy180@gmail.com" className="group active:scale-95 transition-transform">
+                <div className="bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] border border-[#2d3748] rounded-lg p-4 md:p-6 hover:border-[#ff006e]/50 transition-all hover:shadow-lg hover:shadow-[#ff006e]/20">
+                  <Mail className="w-6 md:w-8 h-6 md:h-8 text-[#ff006e] mx-auto mb-2 md:mb-3" />
+                  <p className="text-[#e0e7ff] font-semibold text-sm md:text-base">Email</p>
+                  <p className="text-[#a8b5d1] text-xs md:text-sm mt-1 font-light">
                     mmagdy180@gmail.com
                   </p>
                 </div>
@@ -391,22 +393,22 @@ export default function Home() {
                 href="https://github.com/AboMagdy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className="group active:scale-95 transition-transform"
               >
-                <div className="bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] border border-[#2d3748] rounded-lg p-6 hover:border-[#06ffa5]/50 transition-all hover:shadow-lg hover:shadow-[#06ffa5]/20">
-                  <Github className="w-8 h-8 text-[#06ffa5] mx-auto mb-3" />
-                  <p className="text-[#e0e7ff] font-semibold">GitHub</p>
-                  <p className="text-[#a8b5d1] text-sm mt-1 font-light">
+                <div className="bg-gradient-to-br from-[#1a1f3a] to-[#0a0e27] border border-[#2d3748] rounded-lg p-4 md:p-6 hover:border-[#06ffa5]/50 transition-all hover:shadow-lg hover:shadow-[#06ffa5]/20">
+                  <Github className="w-6 md:w-8 h-6 md:h-8 text-[#06ffa5] mx-auto mb-2 md:mb-3" />
+                  <p className="text-[#e0e7ff] font-semibold text-sm md:text-base">GitHub</p>
+                  <p className="text-[#a8b5d1] text-xs md:text-sm mt-1 font-light">
                     View repositories
                   </p>
                 </div>
               </a>
             </div>
 
-            <div className="text-center">
+            <div className="text-center pt-4 md:pt-6">
               <div className="flex items-center justify-center gap-2 text-[#a8b5d1]">
-                <MapPin size={18} className="text-[#ff006e]" />
-                <span className="font-mono">Based in Saudi Arabia</span>
+                <MapPin size={16} className="text-[#ff006e]" />
+                <span className="font-mono text-sm md:text-base">Based in Saudi Arabia</span>
               </div>
             </div>
           </div>
@@ -414,9 +416,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[#2d3748] py-8 px-4 bg-[#0a0e27]/80 relative z-10">
+      <footer className="border-t border-[#2d3748] py-6 md:py-8 px-4 bg-[#0a0e27]/80 relative z-10">
         <div className="container mx-auto text-center text-[#a8b5d1] font-light">
-          <p className="font-mono text-sm">
+          <p className="font-mono text-xs md:text-sm">
             © 2026 Mohamed Allam. All rights reserved. | Powered by React &
             Tailwind CSS
           </p>
