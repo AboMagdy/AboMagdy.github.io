@@ -140,10 +140,9 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#0a0e27]/80 backdrop-blur-md border-b border-[#ff006e]/20">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="text-xl md:text-2xl font-bold tracking-wider">
-            <span className="text-[#ff006e]">&lt;</span>
-            <span className="text-[#e0e7ff]">Mohamed</span>
-            <span className="text-[#8338ec]">/</span>
-            <span className="text-[#ff006e]">&gt;</span>
+            <span className="bg-gradient-to-r from-[#ff006e] via-[#8338ec] to-[#ff006e] bg-clip-text text-transparent">
+              Mohamed Allam
+            </span>
           </div>
           <div className="hidden md:flex gap-6 items-center">
             <a
