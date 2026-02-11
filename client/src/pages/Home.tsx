@@ -1,5 +1,6 @@
 import { ArrowRight, Github, Linkedin, Mail, MapPin, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ContactForm from "@/components/ContactForm";
 import { useEffect, useState } from "react";
 
 const projects = [
@@ -341,19 +342,26 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 relative z-10">
         <div className="container mx-auto">
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-sm mb-4">
-              &gt; GET IN TOUCH
-            </p>
-            <h2 className="text-4xl font-bold text-[#e0e7ff] mb-6">
-              Let's Work Together
-            </h2>
-            <p className="text-[#a8b5d1] text-lg mb-12 font-light">
-              I'm always interested in hearing about new projects and
-              opportunities. Feel free to reach out!
-            </p>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <p className="text-[#06ffa5] font-mono font-semibold tracking-widest uppercase text-sm mb-4">
+                &gt; GET IN TOUCH
+              </p>
+              <h2 className="text-4xl font-bold text-[#e0e7ff] mb-6">
+                Let's Work Together
+              </h2>
+              <p className="text-[#a8b5d1] text-lg mb-12 font-light">
+                I'm always interested in hearing about new projects and
+                opportunities. Feel free to reach out!
+              </p>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {/* Contact Form */}
+            <div className="bg-gradient-to-br from-[#1a1f3a]/50 to-[#0a0e27]/50 border border-[#ff006e]/30 rounded-xl p-8 mb-12">
+              <ContactForm />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <a
                 href="https://www.linkedin.com/in/mohamed-allam-862747a6"
                 target="_blank"
@@ -395,9 +403,11 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="flex items-center justify-center gap-2 text-[#a8b5d1] mb-12">
-              <MapPin size={18} className="text-[#ff006e]" />
-              <span className="font-mono">Based in Saudi Arabia</span>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 text-[#a8b5d1]">
+                <MapPin size={18} className="text-[#ff006e]" />
+                <span className="font-mono">Based in Saudi Arabia</span>
+              </div>
             </div>
           </div>
         </div>
